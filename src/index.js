@@ -1,12 +1,33 @@
 
 
 
-const box = document.querySelector('#box');
+const box = (container) => {
 
-for (let i=0;i<16*16;i++){
-    const div = document.createElement('div');
-    div.className = 'pixel';
-    box.appendChild(div);
+    const cellArray = [];
+
+    const createGrid = (x, y, cellType, cellClass) => {
+        for (let i = 0; i < x * y; i++) {
+            cellArray[i] = document.createElement(cellType);
+            cellArray[i].className = cellClass;
+            cellArray[i].setAttribute("id", `cell${i}`);
+            cellArray[i].addEventListener('mouseover',changeColor.bind(this,cellArray[i]));            
+        }
+        outputGrid(x, y);
+    }    
+
+    const outputGrid = (x, y) => {
+        for (let i = 0; i < x * y; i++) {
+            document.querySelector(container).appendChild(cellArray[i]);
+        }
+    }
+
+    const changeColor = (cell) => {
+        cell.style.background = "#" + Math.floor(Math.random()*65535).toString(16);
+    }
+
+    return Object.assign({}, { createGrid });
 }
 
-console.log(box.childElementCount);
+var etchBox = box('#box');
+
+etchBox.createGrid(16, 16, 'div', 'pixel');
