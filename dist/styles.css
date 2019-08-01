@@ -1,11 +1,13 @@
 
 
 #box {    
+    --res-x:16;
+    --res-y:16;
     display: grid;
-    width: 500px;
-    height: 500px;
-    grid-template-columns: repeat(16,1fr);
-    grid-template-rows: repeat(16,1fr);
+    width: 800px;
+    height: 800px;
+    grid-template-columns: repeat(var(--res-x),1fr);
+    grid-template-rows: repeat(var(--res-y),1fr);
     grid-gap: 0px;
 }
 
