@@ -1,6 +1,8 @@
 
 
-#box {    
+
+#box {   
+    background-color: #ffffff; 
     --res-x:16;
     --res-y:16;
     display: grid;
@@ -12,9 +14,5 @@
 }
 
 .pixel {  
-
-}
-
-.pixel-hover {
-    background: red;
+    background-color: inherit;
 }
