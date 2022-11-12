@@ -18,7 +18,7 @@
   "homepage": "https://github.com/bmandl/etch-a-sketch#readme",
   "devDependencies": {
     "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "pcre-to-regexp": "0.0.5"
